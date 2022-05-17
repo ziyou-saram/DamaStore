@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "node test.js",
+    "web": "npm start",
     "build": "ng build",
     "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
     "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
