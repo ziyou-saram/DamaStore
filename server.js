@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const cool = require('cool-ascii-faces');
 mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/DamaStore", {useNewUrlParser: true});
 
@@ -17,6 +18,7 @@ var schema = new mongoose.Schema({
 })
 
 var clothesModel = mongoose.model("clothes", schema);
+app.get('/cool', (req, res) => res.send(cool()))
 
 app.get("/", function (req, res) {
     clothesModel.find({}, function (err, allClothes) {
