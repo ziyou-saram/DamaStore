@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DamaStore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+<body>
+<div>
+    <header class="bg-cover" x-data="{ isOpen: false }" style="background-image: url('https://images.unsplash.com/flagged/photo-1553802922-2eb2f7f2c65b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')">
+        <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+            <div class="flex items-center justify-between">
+                <a class="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+                   href="/Main">Brand</a>
+
+                <!-- Mobile menu button -->
+                <div @click="isOpen = !isOpen" class="flex md:hidden">
+                    <button type="button" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                            aria-label="toggle menu">
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                            <path fill-rule="evenodd"
+                                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <div :class="isOpen ? 'flex' : 'hidden'"
+                 class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+                <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+                   href="/Street">Street</a>
+                <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+                   href="/Casual">Casual</a>
+                <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+                   href="/Office">Office</a>
+                <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+                   href="/Signup">Authorize</a>
+                <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+                   href="/Cart">Cart</a>
+            </div>
+        </nav>
+
+        <section class="flex items-center justify-center" style="height: 500px;">
+            <div class="text-center">
+                <p class="text-xl font-medium tracking-wider text-gray-300">Dama Store</p>
+                <h2 class="mt-6 text-3xl font-bold text-white md:text-5xl">Lorem ipsum dolor sit amet, <br> consectetur
+                    adipiscing elit</h2>
+            </div>
+        </section>
+    </header>
+
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="items-center md:flex md:space-x-6">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800">Lorem ipsum dolor sit <br> amet, consectetur</h3>
+                    <p class="max-w-md mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="#" class="block mt-8 text-indigo-700 underline">Experienced team</a>
+                </div>
+
+                <div class="mt-8 md:mt-0 md:w-1/2">
+                    <div class="flex items-center justify-center">
+                        <div class="max-w-md">
+                            <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
+                                 src="https://images.unsplash.com/photo-1545291730-faff8ca1d4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="items-center md:flex md:space-x-6">
+                <div class="md:w-1/2">
+                    <div class="flex items-center justify-center">
+                        <div class="max-w-md">
+                            <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
+                                 src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 md:mt-0 md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800">Lorem ipsum dolor sit <br> amet, consectetur</h3>
+                    <p class="max-w-md mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <a href="#" class="block mt-8 text-indigo-700 underline">Experienced team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <h2 class="text-3xl font-semibold text-gray-800">Lorem ipsum dolor sit amet, <br> consectetur adipiscing</h2>
+            <p class="max-w-lg mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+            <div class="grid gap-8 mt-10 md:mt-20 md:grid-cols-3">
+                <div class="flex space-x-4">
+                    <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10">
+                        <div class="px-4 py-2">
+                            <h1 class="text-gray-900 font-bold text-3xl uppercase">NIKE AIR</h1>
+                            <p class="text-gray-600 text-sm mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
+                        </div>
+                        <img class="h-56 w-full object-cover mt-2" src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="NIKE AIR">
+                        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+                            <h1 class="text-gray-200 font-bold text-xl">$129</h1>
+                            <button class="px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded">Add to card</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10">
+                        <div class="px-4 py-2">
+                            <h1 class="text-gray-900 font-bold text-3xl uppercase">NIKE AIR</h1>
+                            <p class="text-gray-600 text-sm mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
+                        </div>
+                        <img class="h-56 w-full object-cover mt-2" src="https://images.unsplash.com/flagged/photo-1553802922-e345434156e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="NIKE AIR">
+                        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+                            <h1 class="text-gray-200 font-bold text-xl">$129</h1>
+                            <button class="px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded">Add to card</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                    <div class="max-w-xs bg-white shadow-lg rounded-lg overflow-hidden my-10">
+                        <div class="px-4 py-2">
+                            <h1 class="text-gray-900 font-bold text-3xl uppercase">NIKE AIR</h1>
+                            <p class="text-gray-600 text-sm mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
+                        </div>
+                        <img class="h-56 w-full object-cover mt-2" src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="NIKE AIR">
+                        <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+                            <h1 class="text-gray-200 font-bold text-xl">$129</h1>
+                            <button class="px-3 py-1 bg-gray-200 text-sm text-gray-900 font-semibold rounded">Add to card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto">
+            <div class="px-8 py-12 bg-cover rounded-md md:px-20 md:flex md:items-center md:justify-between" style="background-image: url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')">
+                <div>
+                    <h3 class="text-2xl font-semibold text-white">Lorem ipsum dolor sit amet</h3>
+                    <p class="max-w-md mt-4 text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
+                        volutpat, viverra magna risus aliquam massa.</p>
+                </div>
+
+                <a class="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-indigo-600 rounded md:mt-0 hover:bg-indigo-500"
+                   href="#">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">Lorem ipsum dolor sit amet, <br> consectetur adipiscing</h2>
+            <p class="max-w-lg mx-auto mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+            <img class="object-cover bg-cover object-center w-full mt-16 rounded-md shadow h-80"
+                 src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto space-y-8 md:flex md:items-center md:space-y-0">
+            <div class="md:w-2/3">
+                <div class="hidden md:flex md:items-center md:space-x-10">
+                    <img class="object-cover object-center rounded-md shadow w-72 h-72"
+                         src="https://images.unsplash.com/photo-1558897796-185b06fc450a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80">
+                    <img class="object-cover object-center w-64 rounded-md shadow h-96"
+                         src="https://images.unsplash.com/photo-1596902852858-126144389ee2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                </div>
+                <h2 class="text-3xl font-semibold text-gray-800 md:mt-6">Lorem ipsum dolor </h2>
+                <p class="max-w-lg mt-4 text-gray-600">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse illum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia
+                    deserunt mollit anim id est laborum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="md:w-1/3">
+                <img class="object-cover object-center w-full rounded-md shadow" style="height: 700px;"
+                     src="https://images.unsplash.com/photo-1590330297626-d7aff25a0431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">Our Leadership</h2>
+            <p class="max-w-lg mx-auto mt-4 text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+
+            <div class="grid gap-8 mt-6 md:grid-cols-2 lg:grid-cols-4">
+                <div>
+                    <img class="object-cover object-center w-full h-64 rounded-md shadow"
+                         src="https://images.unsplash.com/photo-1588117260148-b47818741c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                    <h3 class="mt-2 font-medium text-gray-700">John Doe</h3>
+                    <p class="text-sm text-gray-600">CEO</p>
+                </div>
+
+                <div>
+                    <img class="object-cover object-center w-full h-64 rounded-md shadow"
+                         src="https://images.unsplash.com/photo-1599069446175-e8ee7e59fe79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                    <h3 class="mt-2 font-medium text-gray-700">John Doe</h3>
+                    <p class="text-sm text-gray-600">CEO</p>
+                </div>
+
+                <div>
+                    <img class="object-cover object-center w-full h-64 rounded-md shadow"
+                         src="https://images.unsplash.com/photo-1589742090907-b64224d1a7e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                    <h3 class="mt-2 font-medium text-gray-700">John Doe</h3>
+                    <p class="text-sm text-gray-600">CEO</p>
+                </div>
+
+                <div>
+                    <img class="object-cover object-center w-full h-64 rounded-md shadow"
+                         src="https://images.unsplash.com/photo-1606586706930-6bfa156600f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80">
+                    <h3 class="mt-2 font-medium text-gray-700">John Doe</h3>
+                    <p class="text-sm text-gray-600">CEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t">
+        <div class="container flex items-center justify-between px-6 py-8 mx-auto">
+            <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
+            <p class="font-medium text-gray-700">Terms of Service</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

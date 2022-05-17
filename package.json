@@ -1,0 +1,25 @@
+{
+  "name": "damastore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "node test.js",
+    "build": "ng build",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
+    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.16"
+  }
+}

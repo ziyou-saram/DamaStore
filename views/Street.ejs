@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <title>Street</title>
+</head>
+<body>
+<header class="bg-gray-400" x-data="{ isOpen: false }">
+    <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+            <a class="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+               href="/Main">Brand</a>
+
+            <!-- Mobile menu button -->
+            <div @click="isOpen = !isOpen" class="flex md:hidden">
+                <button type="button" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                        aria-label="toggle menu">
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                        <path fill-rule="evenodd"
+                              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div :class="isOpen ? 'flex' : 'hidden'"
+             class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Street">Street</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Casual">Casual</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Office">Office</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Signup">Authorize</a>
+            <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+               href="/Cart">Cart</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container flex flex-col px-6 py-4 mx-auto space-y-6 md:h-128 md:py-16 md:flex-row md:items-center md:space-x-6">
+    <div class="flex flex-col items-center w-full md:flex-row md:w-1/2">
+
+        <div class="max-w-lg md:mx-12 md:order-2">
+            <h1 class="text-3xl font-medium tracking-wide text-gray-800 dark:text-white md:text-4xl">Choose YOUR style</h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center w-full h-96 md:w-1/2">
+        <img class="object-cover w-full h-full max-w-2xl rounded-md" src="https://images.unsplash.com/photo-1538329972958-465d6d2144ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="apple watch photo">
+    </div>
+</div>
+
+<main class="my-8">
+    <div class="container mx-auto px-6">
+        <h3 class="text-gray-700 text-2xl font-medium">Street Fashion</h3>
+        <span class="mt-3 text-sm text-gray-500">200+ Products</span>
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+            <% clothes.forEach(function(item){ %>
+            <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('<%= item.image%>')">
+                    <a href="/ProductDetail">
+                        <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </button>
+                    </a>
+                </div>
+                <div class="px-5 py-3">
+                    <h3 class="text-gray-700 uppercase"><%= item.name%></h3>
+                    <span class="text-gray-500 mt-2"><%= item.price%></span>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </div>
+</main>
+
+<footer class="border-t">
+    <div class="container flex items-center justify-between px-6 py-8 mx-auto">
+        <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
+        <p class="font-medium text-gray-700">Terms of Service</p>
+    </div>
+</footer>
+</body>
+</html>

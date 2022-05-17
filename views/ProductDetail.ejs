@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <title>About</title>
+</head>
+<body>
+<header class="bg-gray-400" x-data="{ isOpen: false }">
+    <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+            <a class="text-xl font-bold text-white transition-colors duration-300 transform md:text-2xl hover:text-indigo-400"
+               href="/Main">Brand</a>
+
+            <!-- Mobile menu button -->
+            <div @click="isOpen = !isOpen" class="flex md:hidden">
+                <button type="button" class="text-gray-200 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                        aria-label="toggle menu">
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                        <path fill-rule="evenodd"
+                              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div :class="isOpen ? 'flex' : 'hidden'"
+             class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Street">Street</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Casual">Casual</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Office">Office</a>
+            <a class="text-sm font-medium text-gray-200 transition-colors duration-300 transform hover:text-indigo-400"
+               href="/Signup">Authorize</a>
+            <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition-colors duration-300 transform border rounded hover:bg-indigo-400"
+               href="/Cart">Cart</a>
+        </div>
+    </nav>
+</header>
+
+<main class="my-8">
+    <div class="container mx-auto px-6">
+        <div class="md:flex md:items-center">
+            <div class="w-full h-64 md:w-1/2 lg:h-96">
+                <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto" src="https://images.unsplash.com/photo-1484186694682-a940e4b1a9f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Nike Air">
+            </div>
+            <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
+                <h3 class="text-gray-700 uppercase text-lg">Nike Air</h3>
+                <span class="text-gray-500 mt-3">$125</span>
+                <hr class="my-3">
+                <div class="mt-3">
+                    <label class="text-gray-700 text-sm" for="count">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</label>
+                </div>
+                <div class="flex items-center mt-6">
+                    <button class="px-8 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Order Now</button>
+                    <button class="mx-2 text-gray-600 border rounded-md p-2 hover:bg-gray-200 focus:outline-none">
+                        <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h3 class="text-gray-600 text-2xl font-medium">More Products</h3>
+            <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
+                <% clothes.forEach(function(item){ %>
+                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
+                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('<%= item.image%>')">
+                        <button class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="px-5 py-3">
+                        <h3 class="text-gray-700 uppercase"><%= item.name%></h3>
+                        <span class="text-gray-500 mt-2"><%= item.price%></span>
+                    </div>
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
