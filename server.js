@@ -4,6 +4,8 @@ const app = express();
 mongoose = require("mongoose");
 mongoose.connect(process.env.ORMONGO_URL || "mongodb://localhost:27017/DamaStore", {useNewUrlParser: true});
 const port = process.env.PORT || 8080
+const http = require("http")
+const request = require("request")
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
