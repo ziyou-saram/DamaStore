@@ -92,4 +92,5 @@ app.get("/Cart", (req, res) => {
 
 app.listen(port, function(){
     console.log("Started up at port ${port}");
+    console.log("Database_URL", process.env.ORMONGO_URL);
 });
