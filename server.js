@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/DamaStore", {useNewUrlParser: true});
+mongoose.connect(process.env.ORMONGO_URL || "mongodb://localhost:27017/DamaStore", {useNewUrlParser: true});
 const port = process.env.PORT || 8080
 
 app.use(bodyParser.urlencoded({ extended: true }));
