@@ -11,6 +11,9 @@
     "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
     "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
   },
+  "engines": {
+  "node": "16.14.2"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

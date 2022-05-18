@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/DamaStore", {useNewUrlParser: true});
+const port = process.env.PORT || 8080
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -89,6 +90,6 @@ app.get("/Cart", (req, res) => {
     })
 });
 
-app.listen(process.env.PORT || 8080, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(port, function(){
+    console.log("Started up at port ${port}");
 });
